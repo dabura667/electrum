@@ -130,7 +130,7 @@ class Mnemonic(object):
             x = i%n
             i = i/n
             words.append(self.wordlist[x])
-        return ' '.join(words)
+        return ' '.join(words) if self.wordlist[0] != u'\u3042\u3044\u3053\u304f\u3057\u3093' else u'\u3000'.join(words)
 
     def mnemonic_decode(self, seed):
         n = len(self.wordlist)
